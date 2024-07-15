@@ -35,7 +35,7 @@ export default function Footer() {
                         Após as obras de modernização, reforma e restauro, a mercado livre arena pacaembu será a maior e melhor centro de convivência, esporte e lazer da cidade
                     </p>
 
-                    <Button text={"CONHEÇA O PROJETO"} />
+                    <Button link="https://mercadolivrearenapacaembu.com/" text={"CONHEÇA O PROJETO"} />
                 </div>
 
                 <div className="mt-10">
@@ -48,7 +48,7 @@ export default function Footer() {
                         A Mercado Livre Arena Pacaembu, além dos equipamentos esportivos, terá novos espaços de usos múltiplos, hotel, mais de 10 ofertas gastronômicas entre bares e restaurantes e lojas.
                     </p>
 
-                    <Button text={"ASSISTA AO VÍDEO"} />
+                    <Button link="https://www.youtube.com/watch?v=ZRh2UgnL_UYs" text={"ASSISTA AO VÍDEO"} />
                 </div>
             </div>
 

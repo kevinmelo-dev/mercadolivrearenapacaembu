@@ -1,5 +1,6 @@
 type Button = {
     text: string;
+    link: string;
 }
 
 export default function Button(props: Button) {
@@ -14,7 +15,7 @@ export default function Button(props: Button) {
 
     return (
         <div className="w-3/5 mx-auto border-2 rounded-2xl border-mainYellow text-center" style={barStyle}>
-            <a className="font-pacaembuBold">
+            <a href={props.link} target="__blank" className="font-pacaembuBold">
                 {props.text}
             </a>
         </div>

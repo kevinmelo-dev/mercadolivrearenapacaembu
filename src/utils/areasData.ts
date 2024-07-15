@@ -72,6 +72,16 @@ const areasData: Area[] = [
     status: 50,
     preview: '/img/areas/edificio_multifuncional/preview_01.png',
   },
+  {
+    id: 6,
+    name: 'Salão Capivari',
+    abbr: 'Salão Capivari',
+    mercadoLivre: false,
+    location: '/img/areas/salao_capivari/location.png',
+    description: `Localizado no térreo do Edifício Multifuncional, com vista para o Largo Pacaembu e o campo, o Salão Capivari possui pé direito duplo e foi projetado para oferecer eventos exclusivos, além de experiências imersivas para toda a família.`,
+    status: 50,
+    preview: '/img/areas/salao_capivari/preview_01.png',
+  },
 ];
 
 export default areasData;
