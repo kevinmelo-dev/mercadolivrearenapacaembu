@@ -80,7 +80,7 @@ const Swiper: React.FC<SwiperProps> = ({ items, onItemChange }) => {
       className="relative w-full h-64 overflow-hidden border border-mainYellow mt-5"
     >
       <MdOutlineSwipeUp className='absolute top-5 right-5' size={30} />
-      <ul className="absolute top-1/2 transform -translate-y-1/2 w-full text-center font-pacaembuMedium text-secondaryYellow">
+      <ul className="absolute top-1/2 transform -translate-y-1/2 w-full text-center font-pacaembuRegular text-secondaryYellow">
         {renderItems()}
       </ul>
     </div>
