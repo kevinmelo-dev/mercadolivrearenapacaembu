@@ -1,7 +1,6 @@
-'use client';
+'use client'; 
 
 import React, { useState } from 'react';
-import Areas from "@/components/Areas";
 import Container from "@/components/Container";
 import MobileTitle from "@/components/MobileTitle";
 import Preview from "@/components/Preview";
@@ -10,19 +9,17 @@ import Status from "@/components/Status";
 import Checklist from "@/components/Checklist";
 import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
-
+import Header from '@/components/Header';
 import { Area } from '@/utils/types';
 import areasData from "@/utils/areasData";
-import Header from '@/components/Header';
+import Swiper from '@/components/Swiper';
 
 export default function Home() {
-  const [selectedAreaId, setSelectedAreaId] = useState<number>(areasData[0].id);
+  const [selectedArea, setSelectedArea] = useState<Area>(areasData[0]);
 
-  const handleAreaClick = (area: Area) => {
-    setSelectedAreaId(area.id);
+  const handleItemChange = (item: Area) => {
+    setSelectedArea(item);
   };
-
-  const selectedArea = areasData.find(area => area.id === selectedAreaId) || areasData[0];
 
   return (
     <main className="py-5 px-5 lg:px-20 lg:py-10">
@@ -31,7 +28,7 @@ export default function Home() {
       <div className="block sm:hidden">
         <Container>
           <MobileTitle text="ÁREAS DA ARENA"/>
-          <Areas areas={areasData} onAreaClick={handleAreaClick} selectedAreaId={selectedAreaId} />
+          <Swiper items={areasData} onItemChange={handleItemChange} />
         </Container>
         
         <Container>
@@ -56,7 +53,6 @@ export default function Home() {
           <Preview url={selectedArea.preview} height={52} />
         </Container>
 
-        
         <Divider />
 
         <Footer />
@@ -65,7 +61,6 @@ export default function Home() {
       <div className="hidden sm:flex justify-center items-center h-screen">
         <h1 className="text-4xl font-bold">Em construção</h1>
       </div>
-
     </main>
   );
 }
