@@ -73,11 +73,11 @@ export default function Footer() {
                     <p className="font-pacaembuMedium text-mainYellow text-center" style={textStyle}>CONHEÇA NOSSAS REDES:</p>
                     <div className="mt-5 flex items-center justify-center">
                         <a className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaWhatsapp className="text-black" /></a>
-                        <a className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaYoutube className="text-black" /></a>
-                        <a className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaInstagram className="text-black" /></a>
-                        <a className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaTiktok className="text-black" /></a>
-                        <a className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaLinkedinIn className="text-black" /></a>
-                        <a className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaXTwitter className="text-black" /></a>
+                        <a href="https://www.youtube.com/@mercadolivre.arenapacaembu" target="__blank" className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaYoutube className="text-black" /></a>
+                        <a href="https://www.instagram.com/mercadolivre.arenapacaembu/" target="__blank" className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaInstagram className="text-black" /></a>
+                        <a href="https://www.tiktok.com/@mlarenapacaembu" target="__blank" className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaTiktok className="text-black" /></a>
+                        <a href="https://www.linkedin.com/company/mercadolivrearenapacaembu/" target="__blank" className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaLinkedinIn className="text-black" /></a>
+                        <a href="https://x.com/mlarenapacaembu" target="__blank" className="flex items-center justify-center w-6 h-6 bg-mainYellow rounded-full mx-1"><FaXTwitter className="text-black" /></a>
                     </div>
                 </div>
             </div>
