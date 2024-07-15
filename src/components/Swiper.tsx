@@ -18,12 +18,15 @@ const Swiper: React.FC<SwiperProps> = ({ items, onItemChange }) => {
   }, [currentIndex, items, onItemChange]);
 
   useEffect(() => {
-    const handleTouchMove = (event: TouchEvent) => {
-      if (isTouching.current) {
-        event.preventDefault();
+    const handleTouchMove = (event: Event) => {
+      if (event instanceof TouchEvent) {
+        if (isTouching.current) {
+          event.preventDefault();
+          endY.current = event.touches[0].clientY;
+        }
       }
     };
-
+  
     window.addEventListener('touchmove', handleTouchMove, { passive: false });
     return () => {
       window.removeEventListener('touchmove', handleTouchMove);
