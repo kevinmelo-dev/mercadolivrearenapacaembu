@@ -1,6 +1,7 @@
-import { useState, useRef, TouchEvent, useEffect } from 'react';
-import { Area } from '../utils/types';
+import { useState, useRef, useEffect } from 'react';
+import type { TouchEvent } from 'react';
 import { MdOutlineSwipeUp } from "react-icons/md";
+import { Area } from '@/utils/types';
 
 interface SwiperProps {
   items: Area[];
@@ -26,7 +27,7 @@ const Swiper: React.FC<SwiperProps> = ({ items, onItemChange }) => {
         }
       }
     };
-  
+
     window.addEventListener('touchmove', handleTouchMove, { passive: false });
     return () => {
       window.removeEventListener('touchmove', handleTouchMove);
