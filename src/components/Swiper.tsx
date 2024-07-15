@@ -11,24 +11,36 @@ const Swiper: React.FC<SwiperProps> = ({ items, onItemChange }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const startY = useRef(0);
   const endY = useRef(0);
+  const isTouching = useRef(false);
 
   useEffect(() => {
     onItemChange(items[currentIndex]);
   }, [currentIndex, items, onItemChange]);
 
+  useEffect(() => {
+    const handleTouchMove = (event: TouchEvent) => {
+      if (isTouching.current) {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    return () => {
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+
   const handleTouchStart = (event: TouchEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
+    isTouching.current = true;
     startY.current = event.touches[0].clientY;
   };
 
   const handleTouchMove = (event: TouchEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
     endY.current = event.touches[0].clientY;
   };
 
   const handleTouchEnd = () => {
+    isTouching.current = false;
     const delta = startY.current - endY.current;
     if (delta > 30) {
       setCurrentIndex((prevIndex) => (prevIndex < items.length - 1 ? prevIndex + 1 : 0));
@@ -63,7 +75,7 @@ const Swiper: React.FC<SwiperProps> = ({ items, onItemChange }) => {
       onTouchEnd={handleTouchEnd}
       className="relative w-full h-64 overflow-hidden border border-mainYellow mt-5"
     >
-      <MdOutlineSwipeUp className='absolute top-5 right-5' size={30}/>
+      <MdOutlineSwipeUp className='absolute top-5 right-5' size={30} />
       <ul className="absolute top-1/2 transform -translate-y-1/2 w-full text-center font-pacaembuMedium text-secondaryYellow">
         {renderItems()}
       </ul>
